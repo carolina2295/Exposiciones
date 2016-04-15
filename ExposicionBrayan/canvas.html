@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Provando canvas</title>
+	<script>
+	window.onload= function()¨{
+		//Recibimos el elemento canvas
+		var elemento= document.getElementById('micanvas');
+		//comprrobacion sobre si encontramos un elemento
+		//y podemos extraer su contexto con getContext(),que indica compatibilidad en canvas 
+		if(elemento&&elemento.getContext){
+			//acceso al contexto de '2d'de este canvas ,necesario para dibujar
+			var contexto=elemento.getContext('2d');
+			if(contexto){
+				//Si tengo el contexto 2d es que toddo a ido bien y puedo empezar a dibujar en canvas 
+				//Comienzo dibujando un rectangulo
+				contexto.fillRect(0,0,550,100);
+				contexto.fillStyle='#cc0000';
+				//dibujo otro rectangulo
+				contexto.fillRect(10,10,100,70);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+<canvas id="micanvas" width="200" height="100">
+Este texto se muestra para los navegadores no compatibles con canvas 
+<br>
+Por favor,utiliza firefox,chrome,safari u opera.
+</canvas>
+</body>
+</html>
